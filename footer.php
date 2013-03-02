@@ -4,7 +4,9 @@
       <div class="container">
         <p class="muted credit">Project Used: 
             <a href="http://twitter.github.com/bootstrap/i" target="_blank">Bootstrap</a> | 
-            <a href="http://needim.github.com/noty/" target="_blank">(noty)</a>
+            <a href="http://needim.github.com/noty/" target="_blank">(noty)</a> | 
+            <a href="https://github.com/posabsolute/jQuery-Validation-Engine" target="_blank">jQuery Validation Engine</a> | 
+            <a href="http://redbeanphp.com/" target="_blank">RedBeanPHP</a>
         </p>
       </div>
     </div>
@@ -59,6 +61,9 @@
     <script src="js/noty/jquery.noty.js"></script>
     <script src="js/noty/layouts/bottomRight.js"></script>
     <script src="js/noty/themes/default.js"></script>
+    
+    <script src="js/languages/jquery.validationEngine-en.js"></script>  
+    <script src="js/jquery.validationEngine.js"></script>
     
     <script src="script.js"></script>
 

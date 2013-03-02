@@ -14,6 +14,8 @@
     <script src="docs/assets/js/jquery.js"></script>
 
     <link href="docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
+    
+    <link href="css/validationEngine.jquery.css" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -30,26 +32,37 @@
 
   <body>
 
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="brand" href="#">mini Twitter</a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li><a href="index.php">Home</a></li>
-              <li><a role="button" data-toggle="modal" href="#about">About</a></li>
-              <li><a role="button" data-toggle="modal" href="#contact">Contact</a></li>             
-            </ul>            
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
-    </div>
+	<div id="wrap">
 
+		<div class="navbar navbar-navbar-fixed-top">
 
-    <div id="wrap">
+		<div class="btn-group pull-right">
+		<a href="#" data-toggle="dropdown" class="btn dropdown-toggle">
+		<i class="icon-user"></i> Hello Wonder
+		<span class="caret"></span>
+		</a>
+		<ul class="dropdown-menu">
+		<li><a href="index.php?p=login">Login</a></li>
+		<li><a href="index.php?p=signup">Signup</a></li>
+		</ul>
+		</div>
+
+		  <div class="navbar-inner">
+			<div class="container">
+			  <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			  </button>
+			  <a class="brand" href="#">mini Twitter</a>
+			  <div class="nav-collapse collapse">
+				<ul class="nav">
+				  <li><a href="index.php">Home</a></li>
+				  <li><a role="button" data-toggle="modal" href="#about">About</a></li>
+				  <li><a role="button" data-toggle="modal" href="#contact">Contact</a></li>             
+				</ul>            
+			  </div><!--/.nav-collapse -->
+			</div>
+		  </div>
+		</div>
     
