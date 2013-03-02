@@ -2,20 +2,44 @@
 
 if(!empty($_POST))
 {
-    if(optional_param('submit') == 'Register')
-    {
 
-        $user = R::dispense('user');
-      
-        $user->fullname     = optional_param('fullname');
-        $user->email        = optional_param('email');
-        $user->password     = optional_param('password');
-        $user->twitter_name = optional_param('twitter_name');
-        $user->image        = optional_param('image');
-      
-        $id = R::store($user);
-        redirect('index.php?p=login&m=registered');           
-    }
+  $master_image_path = "users";
+
+  $size[] = array('width' => 160 , 'height' => 120);
+  $size[] = array('width' => 500 , 'height' => 500);
+
+  $target_path = $CFG->dataroot."/$master_image_path/";
+  if(!file_exists($target_path)){
+    mkdir($CFG->dataroot."/$master_image_path",0755,true);
+  }
+
+  if(optional_param('submit') == 'Register')
+  {
+      if(isset($_FILES['image']['name']) && !empty($_FILES['image']['name']))
+      {
+        $image = upload_image('image',$target_path,$size);      
+        if($image)
+          $image = $image;
+        else
+        $image = '';
+      }
+
+
+      $user = R::dispense('user');
+    
+      $user->fullname     = optional_param('fullname');
+      $user->email        = optional_param('email');
+      $user->password     = optional_param('password');
+      $user->twitter_name = optional_param('twitter_name');
+
+      if(!empty($image))
+      {
+        $user->image        = $image;
+      }      
+          
+      $id = R::store($user);
+      redirect('index.php?p=login&m=registered');           
+  }
 }
 
 ?>

@@ -3,8 +3,8 @@ var mT = {
 	varname1:'val1',
 	varname2:'val2',
 	
-	init:function(){ 
-		
+	init:function(){
+		$(".profile-zoom").colorbox({height:"75%"});		
 	},
 
 	generate:function(message,time = 5000){
@@ -21,5 +21,4 @@ var mT = {
 }
 $(document).ready(function() {
 	mT.init();	
-	
 });

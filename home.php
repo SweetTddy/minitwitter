@@ -1,11 +1,20 @@
+<?php
+if(isLogin(false))
+{
+?>
+
 <div class="container">
+	<?php require('guest.php') ?>
+</div>
 
-	home  
-
-</div> <!-- /container -->
-
-<script>
-$(document).ready(function() {
-	mT.generate('Welcome to mini Twitter');
-});
-</script>
+<?php
+}
+else
+{
+?>
+<div class="container">
+	<?php require('user.php') ?>
+</div>
+<?php
+}
+?>

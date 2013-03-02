@@ -16,6 +16,7 @@
     <link href="docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
     
     <link href="css/validationEngine.jquery.css" rel="stylesheet">
+    <link href="css/colorbox.css" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -36,16 +37,46 @@
 
 		<div class="navbar navbar-navbar-fixed-top">
 
-		<div class="btn-group pull-right">
-		<a href="#" data-toggle="dropdown" class="btn dropdown-toggle">
-		<i class="icon-user"></i> Hello Wonder
-		<span class="caret"></span>
-		</a>
-		<ul class="dropdown-menu">
-		<li><a href="index.php?p=login">Login</a></li>
-		<li><a href="index.php?p=signup">Signup</a></li>
-		</ul>
-		</div>
+			<div class="btn-group pull-right">
+				<a href="#" data-toggle="dropdown" class="btn dropdown-toggle">
+				<?php
+				if(islogin(false))
+				{
+				?>
+					<i class="icon-user"></i> Hello Wonder
+				<?php
+				}
+				else
+				{
+				?>
+					<i class="icon-user"></i> Hello <?php echo $_SESSION['fullname'];?>
+				<?php
+					}
+				?>
+					<span class="caret"></span>
+				</a>
+				<ul class="dropdown-menu">
+
+					<?php 
+					if(!islogin(false))
+					{
+					?>
+						<li><a href="index.php?p=profile">Profile</a></li>
+						<li class="divider"></li>
+					    <li><a href="logout.php">Sign Out</a></li>
+						    
+					<?php
+					}
+					else
+					{
+					?>
+						<li><a href="index.php?p=login">Login</a></li>
+						<li><a href="index.php?p=signup">Signup</a></li>						
+					<?php
+					}
+					?>					
+				</ul>
+			</div>
 
 		  <div class="navbar-inner">
 			<div class="container">

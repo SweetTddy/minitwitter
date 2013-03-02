@@ -4,7 +4,6 @@
 
   $page = optional_param('p');
 
-
   switch ($page) {
   	case 'login':
   		$page_type = 'login';
@@ -13,6 +12,10 @@
   	case 'signup':
   		$page_type = 'signup';
   		break;
+
+    case 'profile':
+      $page_type = 'profile';
+      break;
   	
   	default:
   		$page_type = 'home';

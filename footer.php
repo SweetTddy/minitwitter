@@ -6,6 +6,7 @@
             <a href="http://twitter.github.com/bootstrap/i" target="_blank">Bootstrap</a> | 
             <a href="http://needim.github.com/noty/" target="_blank">(noty)</a> | 
             <a href="https://github.com/posabsolute/jQuery-Validation-Engine" target="_blank">jQuery Validation Engine</a> | 
+            <a href="http://www.jacklmoore.com/colorbox" target="_blank">Colorbox</a> | 
             <a href="http://redbeanphp.com/" target="_blank">RedBeanPHP</a>
         </p>
       </div>
@@ -41,6 +42,8 @@
       </div>
     </div>
 
+    <?php print_object($_SESSION); ?>
+
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -64,6 +67,8 @@
     
     <script src="js/languages/jquery.validationEngine-en.js"></script>  
     <script src="js/jquery.validationEngine.js"></script>
+    
+    <script src="js/jquery.colorbox.js"></script>
     
     <script src="script.js"></script>
 

@@ -22,7 +22,7 @@
 				redirect("index.php?p=login");
 			}
 			else
-			{
+			{				
 				return true;
 			}
 		}
@@ -30,6 +30,7 @@
 		{
 			redirect("logout.php");
 		}
+		return false;
 	}
 
 	function set_session_cookie($user)
@@ -49,7 +50,7 @@
 
 	function upload_image($image_field_name, $dir_path, $sizes)
 	{
-		require_once 'lib/phpthumb/ThumbLib.inc.php';
+		require_once 'phpthumb/ThumbLib.inc.php';
 
 		$cnt = 1;
 		
@@ -70,14 +71,7 @@
 			$info = getimagesize($_FILES[$image_field_name]['tmp_name']);		
 			$originalfilename = basename($_FILES[$image_field_name]['name']);
 			$imagetarget = resolve_filename_collisions($dir_path, array(basename($_FILES[$image_field_name]['name'])), $format='%s_%d.%s');
-			$originalfile = $dir_path.$imagetarget[0];
-
-			/*$ext = preg_replace('/^.*\.([^.]+)$/D', '$1', $originalfile);			
-			$destinationfile =  $resized_path.$imagetarget[0];
-			$destinationfile1 =  str_replace($ext,'_f1.'.$ext,$destinationfile);
-			$destinationfile2 =  str_replace($ext,'_f2.'.$ext,$destinationfile);*/
-
-			//$destinationfile2 =  $resized_path.'f2_'.$imagetarget[0];
+			$originalfile = $dir_path.$imagetarget[0];			
 												
 			if(move_uploaded_file($_FILES[$image_field_name]['tmp_name'],$originalfile))
 			{
@@ -87,9 +81,7 @@
 					$destinationfile =  $resized_path.'f'.$cnt++.'_'.$imagetarget[0];
 					$thumb = PhpThumbFactory::create($originalfile);
 					$thumb->resize($size['width'], $size['height']);
-					$thumb->save($destinationfile);
-
-					//wp_resize_logo($originalfile,$destinationfile,$originalfilename,$size['width'],$size['height']);
+					$thumb->save($destinationfile);				
 				}
 
 				return $imagetarget[0];
@@ -101,6 +93,37 @@
 		{
 			return 0;
 		}
+	}
+
+	function resolve_filename_collisions($destination,$files,$format='%s_%d.%s')
+	{
+		foreach ($files as $k => $f) {
+			if (check_potential_filename($destination,$f,$files)) {
+				$bits = explode('.', $f);
+				for ($i = 1; true; $i++) {
+					$try = sprintf($format, $bits[0], $i, $bits[1]);
+					if (!check_potential_filename($destination,$try,$files)) {
+						$files[$k] = $try;
+						break;
+					}
+				}
+			}
+		}
+		return $files;
+	}
+
+	/**
+	 * @used by resolve_filename_collisions
+	 */
+	function check_potential_filename($destination,$filename,$files)
+	{
+		if (file_exists($destination.'/'.$filename)) {
+			return true;
+		}
+		if (count(array_keys($files,$filename)) > 1) {
+			return true;
+		}
+		return false;
 	}
 
 	function jsRedirect($url)

@@ -1,5 +1,7 @@
 <?php
 
+$message = optional_param('m');
+
 if(!empty($_POST))
 {
 	print_object($_POST);
@@ -15,7 +17,7 @@ if(!empty($_POST))
 
       set_session_cookie($user);
 
-      redirect('index.php');
+      redirect('index.php?m=welcome');
   }
   else
   {
@@ -46,3 +48,21 @@ $(document).ready(function() {
   $("#login").validationEngine();
 });
 </script>
+
+<?php
+
+if(!empty($message))
+{
+  if($message == 'invalid-login')
+  {
+?>
+<script>
+$(document).ready(function() {
+  mT.generate('Opps !! We cannot authenticate you, recheck your email/password');
+});
+</script>
+<?php
+  }
+}
+
+?>

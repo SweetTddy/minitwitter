@@ -9,7 +9,7 @@
 	$CFG->dbname		= 'miniTwitter';
 
 	$CFG->siteroot 		= 'http://localhost/PMS/minitwitter/';
-	$CFG->dataroot 		= 'E:/xampp/htdocs/PMS/minitwitter/upload';
+	$CFG->dataroot 		= 'E:/xampp/htdocs/PMS/minitwitter/uploads';
 
 	$CFG->status		= 'dev';
 
