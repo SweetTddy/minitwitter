@@ -1,6 +1,6 @@
       </div> <!-- /wrap -->
 
-    <div id="footer">
+    <div id="footer" class="">
       <div class="container">
         <p class="muted credit">Project Used: 
             <a href="http://twitter.github.com/bootstrap/i" target="_blank">Bootstrap</a> | 
@@ -42,7 +42,7 @@
       </div>
     </div>
 
-    <?php print_object($_SESSION); ?>
+    <?php //print_object($_SESSION); ?>
 
     <!-- Le javascript
     ================================================== -->

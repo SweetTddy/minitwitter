@@ -1,20 +1,12 @@
 <?php
+
 if(isLogin(false))
 {
-?>
-
-<div class="container">
-	<?php require('guest.php') ?>
-</div>
-
-<?php
+	require('guest.php');
 }
 else
 {
-?>
-<div class="container">
-	<?php require('user.php') ?>
-</div>
-<?php
+	require('user.php');
 }
+
 ?>

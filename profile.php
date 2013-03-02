@@ -33,6 +33,7 @@ if(!empty($_POST))
       $user->fullname     = optional_param('fullname');
       $user->email        = optional_param('email');      
       $user->twitter_name = optional_param('twitter_name');
+      $user->bio          = optional_param('bio');
 
       if(!empty($image))
       {
@@ -68,6 +69,9 @@ else
       <label>miniTwitter Username</label>
       <span class="add-on">@</span>
       <input class="span2 validate[required]" id="prependedInput" size="16" type="text" name="twitter_name" placeholder="Your Username" value="<?php echo $user_details['twitter_name'] ?>">
+
+      <label>Bio</label>
+      <textarea rows="4" name="bio" class="validate[required]" placeholder="Tell us about yourself !!"><?php echo $user_details['bio'] ?></textarea>
 
       <label>Profile Image</label>
       <div class="row">

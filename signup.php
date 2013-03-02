@@ -31,6 +31,7 @@ if(!empty($_POST))
       $user->email        = optional_param('email');
       $user->password     = optional_param('password');
       $user->twitter_name = optional_param('twitter_name');
+      $user->bio          = optional_param('bio');
 
       if(!empty($image))
       {
@@ -46,7 +47,7 @@ if(!empty($_POST))
 
 <div class="container">
 
-  <form class="form-signin" id="signup" method="post" action="index.php?p=signup">
+  <form class="form-signin" id="signup" method="post" action="index.php?p=signup" enctype="multipart/form-data">
       <label>Name</label>
       <input type="text" name="fullname" class="span3 validate[required]" placeholder="What is your name?" value="">
 
@@ -65,6 +66,9 @@ if(!empty($_POST))
       <label>miniTwitter Username</label>
       <span class="add-on">@</span>
       <input class="span2 validate[required]" id="prependedInput" size="16" type="text" name="twitter_name" placeholder="Your Username" value="">
+
+      <label>Bio</label>
+      <textarea rows="4" name="bio" class="validate[required]" placeholder="Tell us about yourself !!"></textarea>
 
       <label>Profile Image</label>
       <div class="row">
