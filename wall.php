@@ -220,14 +220,17 @@ OP;
 						echo <<<OP
 
 						<div class="media">
-							<a class="pull-left" href="#">
+							<a class="pull-left" href="user.php?u=$twitter_name">
 								<img class="media-object" alt="64x64" style="width: 64px;" src="$profile_image">
 							</a>
 							<div class="media-body">
-								<h4 class="media-heading">$name</h4>
+								<a href="user.php?u=$twitter_name">
+									<h4 class="media-heading">$name | @$twitter_name</h4>
+								</a>
 								$tweet
 							</div>
 						</div>
+						<hr>
 OP;
 					}
   				?>			

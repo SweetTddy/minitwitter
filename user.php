@@ -34,7 +34,7 @@
 									<div class="span3">
 										<b class="fullname"><?php echo $user_details->fullname; ?></b>
 										<br/>
-										<?php echo $user_details->bio; ?>
+										<span><?php echo $user_details->bio; ?></span>
 									</div>
 								</div>
 							</div>
@@ -96,6 +96,7 @@
 								$tweet
 							</div>
 						</div>
+						<hr>
 OP;
 				}
 				?>
