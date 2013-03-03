@@ -36,7 +36,7 @@ nbproject
 node_modules
 dist
 
-config.php
+# config.php
 live-config.php
 local-config.php
 
