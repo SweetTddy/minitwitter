@@ -70,9 +70,9 @@ $user_details = R::findOne('user',' twitter_name = ?', array($_SESSION['twitter_
 										       u.twitter_name,
 										       u.bio,
 										       u.id
-										FROM    minitwitter.following f
+										FROM    following f
 										       INNER JOIN
-										          minitwitter.user u
+										          user u
 										       ON (f.follows = u.id)
 										GROUP BY f.follows
 										ORDER BY count DESC LIMIT 0,2
@@ -111,9 +111,9 @@ OP;
 											u.fullname,
 											u.twitter_name,
 											u.bio
-										FROM minitwitter.user u
+										FROM user u
 											WHERE (u.id NOT IN (SELECT DISTINCT f.follows
-												FROM minitwitter.following f)) ORDER BY id DESC LIMIT 0,2
+												FROM following f)) ORDER BY id DESC LIMIT 0,2
 									');
 
 									foreach ($nonFollwers as $key => $nf) {
@@ -151,9 +151,9 @@ OP;
 										       u.twitter_name,
 										       u.bio,
 										       u.id
-										FROM    minitwitter.tweets t
+										FROM    tweets t
 										       INNER JOIN
-										          minitwitter.user u
+										          user u
 										       ON (t.userid = u.id)										
 										GROUP BY t.userid
 										ORDER BY count DESC LIMIT 0,2
@@ -200,12 +200,12 @@ OP;
 							       user.twitter_name,
 							       user.bio,
 							       tweets.tweets
-							  FROM    minitwitter.tweets tweets
+							  FROM    tweets tweets
 							       INNER JOIN
-							          minitwitter.user user
+							          user user
 							       ON (tweets.userid = user.id)
 							 WHERE (tweets.userid = '.$_SESSION['user_id'].' OR tweets.userid IN (SELECT following.follows
-							                            FROM minitwitter.following following
+							                            FROM following following
 							                           WHERE (following.userid = '.$_SESSION['user_id'].')))
   								ORDER BY id DESC
 						');
