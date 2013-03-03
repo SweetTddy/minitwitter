@@ -6,7 +6,7 @@ if(isLogin(false))
 }
 else
 {
-	require('user.php');
+	require('wall.php');
 }
 
 ?>

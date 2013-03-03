@@ -7,6 +7,7 @@ if(!empty($_POST))
 
   $master_image_path = "users";
 
+  $size[] = array('width' => 64 , 'height' => 64);
   $size[] = array('width' => 160 , 'height' => 120);
   $size[] = array('width' => 500 , 'height' => 500);
 

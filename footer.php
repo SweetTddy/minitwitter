@@ -6,8 +6,14 @@
             <a href="http://twitter.github.com/bootstrap/i" target="_blank">Bootstrap</a> | 
             <a href="http://needim.github.com/noty/" target="_blank">(noty)</a> | 
             <a href="https://github.com/posabsolute/jQuery-Validation-Engine" target="_blank">jQuery Validation Engine</a> | 
-            <a href="http://www.jacklmoore.com/colorbox" target="_blank">Colorbox</a> | 
-            <a href="http://redbeanphp.com/" target="_blank">RedBeanPHP</a>
+            <a href="http://jquery.com/" target="_blank">jQuery</a> | 
+            <a href="https://github.com/fzaninotto/Faker" target="_blank">Faker</a> | 
+            <a href="http://redbeanphp.com/" target="_blank">RedBeanPHP</a> | 
+            <a href="http://phpthumb.gxdlabs.com/" target="_blank">PHP Thumb</a> | 
+            <a href="https://bitbucket.org/" target="_blank">bitbucket.org</a> | 
+            <a href="http://en.wikipedia.org/wiki/Git_%28software%29" target="_blank">GIT</a> |
+            <a href="https://twitter.com/robinflyhigh" target="_blank">Twitter</a> |
+            <a href="https://www.google.co.in/" target="_blank">Google :)</a>
         </p>
       </div>
     </div>
@@ -43,10 +49,6 @@
     </div>
 
     <?php //print_object($_SESSION); ?>
-
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
     
     <script src="docs/assets/js/bootstrap-transition.js"></script>
     <script src="docs/assets/js/bootstrap-alert.js"></script>

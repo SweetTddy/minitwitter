@@ -91,6 +91,8 @@
 				  <li><a href="index.php">Home</a></li>
 				  <li><a role="button" data-toggle="modal" href="#about">About</a></li>
 				  <li><a role="button" data-toggle="modal" href="#contact">Contact</a></li>             
+				  <li><a role="button" href="fake.php">Generate Fake Data</a></li>             
+				  <li><a role="button" href="user-data.php">Username & Password</a></li>             
 				</ul>            
 			  </div><!--/.nav-collapse -->
 			</div>
