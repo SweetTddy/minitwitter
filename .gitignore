@@ -39,3 +39,5 @@ dist
 config.php
 live-config.php
 local-config.php
+
+uploads/*
