@@ -71,6 +71,7 @@ if(!empty($_POST))
       <label>Bio</label>
       <textarea rows="4" name="bio" class="validate[required]" placeholder="Tell us about yourself !!"></textarea>
 
+      <!--
       <label>Profile Image</label>
       <div class="row">
         <div class="span2">
@@ -82,6 +83,9 @@ if(!empty($_POST))
           <input class="input-file" id="fileInput" name="image" type="file">
         </div>
       </div>
+      -->
+      <br>
+
       <button type="submit" name="submit" value="Register" class="btn" >Register</button>
   </form>  
 </div> <!-- /container -->

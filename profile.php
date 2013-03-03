@@ -74,6 +74,7 @@ else
       <label>Bio</label>
       <textarea rows="4" name="bio" class="validate[required]" placeholder="Tell us about yourself !!"><?php echo $user_details['bio'] ?></textarea>
 
+      <!--
       <label>Profile Image</label>
       <div class="row">
         <div class="span2">
@@ -99,6 +100,8 @@ else
           <input class="input-file" id="fileInput" name="image" type="file">
         </div>
       </div>
+      -->
+      <br/>
       <button type="submit" name="submit" value="Update" class="btn" >Update</button>
   </form>  
 </div> <!-- /container -->

@@ -38,7 +38,7 @@
 					<p>I know it's a pain to test an application and that you when it needs to be tested with multiple accounts.</p>
 					<p>Who would do the register multiple time?</p>
 					<p>Don't worry, I would not burden you.  Have used a Fake Data Generator which is executed once. You can go ahead and run it as many time as you want.</p>
-					<p>It creates 10 users and 5 tweets for each user.</p>
+					<p>It creates 10 users and 1 tweets for each user.</p>
 					<p>Happy Testing</p>
 
 				</div>

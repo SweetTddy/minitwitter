@@ -30,7 +30,7 @@ do{
     	$tweets->tweets = $faker->text;
 		R::store($tweets);
     }
-    while($j++ < 5);
+    while($j++ < 2);
 
     
 
