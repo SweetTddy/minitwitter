@@ -6,7 +6,7 @@
 
 	$CFG = new stdClass();
 
-	$CFG->dbhost		= 'http://robin-flyhigh-mini-twitter.herokuapp.com';
+	$CFG->dbhost		= 'us-cdbr-east-03.cleardb.com';
 	$CFG->dbusername	= 'b71737066fc0bf';
 	$CFG->dbpassword	= '5637a063';
 	$CFG->dbname		= 'heroku_9ea0cd79e460055';
