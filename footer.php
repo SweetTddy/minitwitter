@@ -13,6 +13,8 @@
             <a href="https://bitbucket.org/" target="_blank">bitbucket.org</a> | 
             <a href="http://en.wikipedia.org/wiki/Git_%28software%29" target="_blank">GIT</a> |
             <a href="https://twitter.com/robinflyhigh" target="_blank">Twitter</a> |
+            <a href="https://heroku.com" target="_blank">Heroku</a> |
+            <a href="https://cleardb.com" target="_blank">ClearDB</a> |
             <a href="https://www.google.co.in/" target="_blank">Google :)</a>
         </p>
       </div>
