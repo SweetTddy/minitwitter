@@ -14,7 +14,7 @@
 
 	function redirect($url)
 	{
-		header("Location:$url");
+		@header("Location:$url");
 	}
 
 	function islogin($redirect=true)
@@ -45,11 +45,11 @@
 		$_SESSION['email']			= isset($user['email'])?$user['email']:'';
 		$_SESSION['hash']			= md5(isset($user['email'])?$user['email']:'');
 
-		setcookie("user_id",		$user['id']);
-		setcookie("twitter_name",	$user['twitter_name']);
-		setcookie("fullname",		$user['fullname']);
-		setcookie("email",			$user['email']);
-		setcookie("hash",			md5($user['email']));
+		@setcookie("user_id",		$user['id']);
+		@setcookie("twitter_name",	$user['twitter_name']);
+		@setcookie("fullname",		$user['fullname']);
+		@setcookie("email",			$user['email']);
+		@setcookie("hash",			md5($user['email']));
 	}
 
 	function upload_image($image_field_name, $dir_path, $sizes)

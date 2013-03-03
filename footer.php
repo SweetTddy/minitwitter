@@ -48,7 +48,7 @@
       </div>
     </div>
 
-    <?php //print_object($_SESSION); ?>
+    <?php print_object($_SESSION); ?>
     
     <script src="docs/assets/js/bootstrap-transition.js"></script>
     <script src="docs/assets/js/bootstrap-alert.js"></script>

@@ -4,8 +4,7 @@ $message = optional_param('m');
 
 if(!empty($_POST))
 {
-	print_object($_POST);
-
+	
 	$user_details = R::findOne('user',' email = ? AND password = ?', array(optional_param('email'), optional_param('password')));
 
   if (isset($user_details->id))

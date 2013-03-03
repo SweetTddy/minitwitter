@@ -39,7 +39,7 @@ while($i++ < 10);
 
 $following = R::dispense('following');
 $following->userid  = 1;
-$following->follows = 1;
+$following->follows = 2;
 $id = R::store($following);
 
 echo '<div class="container"><h3>Tadaa !! Fake Data Generated.</h3></div>';
