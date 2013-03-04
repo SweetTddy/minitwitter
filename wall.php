@@ -53,6 +53,11 @@ $user_details = R::findOne('user',' twitter_name = ?', array($_SESSION['twitter_
 	  				</div>
   				</div>
   				<div class="well">
+  					<p>
+  						<a href="list.php" class="btn btn-large btn-primary" style="margin-top:10px;">List all Wonders</a>
+					</p>
+  				</div>
+  				<div class="well">
 					<div class="tabbable infolist"> <!-- Only required for left/right tabs -->
 						<ul class="nav nav-tabs">
 							<li class="active"><a href="#tab1" data-toggle="tab">Most Followed</a></li>

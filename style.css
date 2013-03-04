@@ -128,3 +128,8 @@ ul.js-mini-profile-stats{
 	font-size:12px;
 	line-height: 14px;
 }
+.userlist .media-body p{
+  text-align: left;
+  font-size:12px;
+  line-height: 14px;
+}

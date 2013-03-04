@@ -62,6 +62,17 @@ $(document).ready(function() {
 </script>
 <?php
   }
+
+  if($message == 'registered')
+  {
+?>
+<script>
+$(document).ready(function() {
+  mT.generate('Super, lets rock and roll !!');
+});
+</script>
+<?php
+  }
 }
 
 ?>

@@ -11,6 +11,11 @@
 	$CFG->dbpassword	= '5637a063';
 	$CFG->dbname		= 'heroku_9ea0cd79e460055';
 
+	$CFG->dbhost		= 'localhost';
+	$CFG->dbusername	= 'root';
+	$CFG->dbpassword	= '';
+	$CFG->dbname		= 'minitwitter';
+
 	$CFG->siteroot 		= 'http://robin-flyhigh-mini-twitter.herokuapp.com/';
 	$CFG->dataroot 		= '/app/www/uploads';
 

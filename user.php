@@ -108,7 +108,7 @@ OP;
 <script>
 $(document).ready(function() {
 	$('#follow-unfollow').bind('click', function() {		
-		mT.doAjax('ajax.php',{ m: $("#follow-unfollow").data('method'), userid: $("#follow-unfollow").data('userid') }, mT.followSuccess);
+		mT.doAjax('ajax.php',{ m: $("#follow-unfollow").data('method'), userid: $("#follow-unfollow").data('userid') },$(this), mT.doFollowUnfollow);
 	});
 });
 </script>

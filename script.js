@@ -1,6 +1,10 @@
 var mT = {
 	
-	init:function(){		
+	init:function(){
+		$('#myTab li a').on('shown', function (e) {
+  			e.target // activated tab
+  			e.relatedTarget // previous tab
+		})
 	},
 	generate:function(message ,time){
 
@@ -13,16 +17,18 @@ var mT = {
 						theme: 'defaultTheme'
 		});		
 	},
-	doAjax:function(url,values,doneFunction,failFunction,alwaysFunction){
+	doAjax:function(url,values,element,doneFunction,failFunction,alwaysFunction){
 		$.ajax(
 				{
 					type: "GET",
 					url: url,
 					data: values,
 				}).done(function() {
-					doneFunction.call();
+					if(doneFunction != null)
+						doneFunction.call(element);
 				}).fail(function() {
-					doneFunction.call();
+					if(failFunction != null)
+						failFunction.call();
 				}).always(function() {
 					if(alwaysFunction != null)
 						alwaysFunction.call();
@@ -47,8 +53,24 @@ var mT = {
 			$("#follow-unfollow").data('method','follow');
 			mT.generate('He would be upset :(');
 		}
+	},
+	doFollowUnfollow:function(){
+		if($(this).data('method') == 'follow')
+		{
+			$(this).html('Unfollow');
+			$(this).addClass('btn-primary').removeClass('btn-warning');
+			$(this).data('method','unfollow');
+			mT.generate('Bingo !! You are now following the user');
+		}
+		else
+		{
+			$(this).html('Follow');
+			$(this).addClass('btn-warning').removeClass('btn-primary');
+			$(this).data('method','follow');
+			mT.generate('He would be upset :(');
+		}		
 	}
 }
 $(document).ready(function() {
-	mT.init();	
+	mT.init();
 });
