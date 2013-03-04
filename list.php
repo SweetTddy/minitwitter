@@ -174,9 +174,9 @@ OP;
 						  	$current_user_follow_check = true;
 
 						if($current_user_follow_check)
-							$follow_button = '<p><button data-method="unfollow" data-userid="$uid" type="button" class="follow-unfollow btn-mini btn-primary pull-right">Unfollow</button></p>';
+							$follow_button = '<p><button data-method="unfollow" data-userid='.$uid.' type="button" class="follow-unfollow btn-mini btn-primary pull-right">Unfollow</button></p>';
 						else
-							$follow_button = '<p><button data-method="follow" data-userid="$uid" type="button" class="follow-unfollow btn-mini btn-warning pull-right">Follow</button></p>';
+							$follow_button = '<p><button data-method="follow" data-userid='.$uid.' type="button" class="follow-unfollow btn-mini btn-warning pull-right">Follow</button></p>';
 						
 
 						echo <<<OP
