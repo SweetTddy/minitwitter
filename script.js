@@ -25,7 +25,7 @@ var mT = {
 					data: values,
 				}).done(function() {
 					if(doneFunction != null)
-						doneFunction.call(element);
+						doneFunction.call(element,values);
 				}).fail(function() {
 					if(failFunction != null)
 						failFunction.call();
@@ -68,6 +68,23 @@ var mT = {
 			$(this).addClass('btn-warning').removeClass('btn-primary');
 			$(this).data('method','follow');
 			mT.generate('He would be upset :(');
+		}		
+	},
+	doFollowUnfollowBulk:function(value){
+		if($(this).data('method') == 'follow')
+		{
+			$(this).html('Unfollow');
+			$(this).addClass('btn-primary').removeClass('btn-warning');
+			$(this).data('method','unfollow');
+			mT.generate('Bingo !! You are now following the user');
+		}
+		else
+		{
+			$(this).html('Follow');
+			$(this).addClass('btn-warning').removeClass('btn-primary');
+			$(this).data('method','follow');
+			mT.generate('He would be upset :(');
+			//$('.user-box-'+value.userid).fadeOut();
 		}		
 	}
 }

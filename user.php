@@ -70,10 +70,7 @@
 							else
 								echo '<p><button id="follow-unfollow" data-method="follow" data-userid="'.$user_details->id.'" type="button" class="btn-small btn-warning">Follow</button></p>';
 						}
-
 					?>
-					
-
   				</div>
   				<div class="well">
 					<h3> Ad Block for $$ </h3>
