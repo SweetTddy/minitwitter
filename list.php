@@ -144,8 +144,7 @@ OP;
 												FROM following f
 												UNION
 												SELECT DISTINCT f.follows AS f
-												FROM following f)
-						LIMIT 0,7
+												FROM following f)						
 					');
 
 					foreach ($other_user_data as $key => $oud) {
