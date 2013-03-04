@@ -140,11 +140,22 @@ OP;
 								user.bio
 						FROM user user
 						WHERE user.id NOT IN (
-												SELECT DISTINCT f.userid AS u
-												FROM following f
+												SELECT DISTINCT user.id
+											  	FROM    following following
+											       INNER JOIN
+											          user user
+											       ON (following.follows = user.id)
+											 	WHERE (following.userid = '.$_SESSION['user_id'].')
+												
 												UNION
-												SELECT DISTINCT f.follows AS f
-												FROM following f)						
+												
+												SELECT DISTINCT user.id
+												FROM    following following
+												       INNER JOIN
+												          user user
+												       ON (following.userid = user.id)
+												 WHERE (following.follows = '.$_SESSION['user_id'].')
+											)
 					');
 
 					foreach ($other_user_data as $key => $oud) {
