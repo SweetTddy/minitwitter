@@ -39,9 +39,9 @@
 						       user.twitter_name,
 						       user.bio,
 						       user.id
-						  FROM    minitwitter.following following
+						  FROM    following following
 						       INNER JOIN
-						          minitwitter.user user
+						          user user
 						       ON (following.follows = user.id)
 						 WHERE (following.userid = '.$_SESSION['user_id'].')						 
 					');
@@ -83,9 +83,9 @@ OP;
 						       user.twitter_name,
 						       user.bio,
 						       user.id
-						  FROM    minitwitter.following following
+						  FROM    following following
 						       INNER JOIN
-						          minitwitter.user user
+						          user user
 						       ON (following.userid = user.id)
 						 WHERE (following.follows = '.$_SESSION['user_id'].')
 					');
