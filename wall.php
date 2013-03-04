@@ -250,8 +250,11 @@ OP;
 
 <script>
 $(document).ready(function() {
-	$('#tweetNow').bind('click', function() {		
-		mT.doAjax('ajax.php',{ m: "tweet", text: $("#tweetText").val() }, $(this), mT.tweetSuccess);
+	$('#tweetNow').bind('click', function() {
+		if($("#tweetText").val() == '')
+			mT.generate('Duhh!! Put some text for tweeting.');
+		else
+			mT.doAjax('ajax.php',{ m: "tweet", text: $("#tweetText").val() }, $(this), mT.tweetSuccess);
 	});
 });
 </script>
