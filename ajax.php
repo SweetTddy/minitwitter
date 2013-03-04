@@ -45,7 +45,7 @@ function addFollower($userid)
 function removeFollower($userid)
 {
 	$following = R::findOne('following','userid = ? AND follows = ?', array($_SESSION['user_id'],$userid));
-	//R::trash($following);
+	R::trash($following);
 }
 
 ?>

@@ -30,7 +30,7 @@ $user_details = R::findOne('user',' twitter_name = ?', array($_SESSION['twitter_
 					<div class="js-mini-profile-stats-container">
 						<ul class="stats js-mini-profile-stats" data-user-id="47271576">
 							<li>
-								<a class="js-nav" href="#" data-element-term="tweet_stats" data-nav="profile">
+								<a id="total_tweet_container" class="js-nav" href="#" data-element-term="tweet_stats" data-nav="profile">
 									<strong><?php echo userTotalTweets($user_details->id) ?></strong> Tweets
 								</a>
 							</li>
@@ -49,6 +49,9 @@ $user_details = R::findOne('user',' twitter_name = ?', array($_SESSION['twitter_
 
 					<div class="tweet-content">
 						<textarea id="tweetText" cols="6" rows="4"></textarea> <br/>
+						<input type="hidden" value="<?php echo $user_details->fullname?>" id="fullname" />
+						<input type="hidden" value="<?php echo $user_details->twitter_name?>" id="username" />						
+						<input type="hidden" value="<?php echo userTotalTweets($user_details->id) ?>" id="total_tweet" />						
 						<p><button id="tweetNow" type="button" class="btn-small btn-success">miniTweet</button></p>
 	  				</div>
   				</div>
@@ -212,7 +215,7 @@ OP;
 							 WHERE (tweets.userid = '.$_SESSION['user_id'].' OR tweets.userid IN (SELECT following.follows
 							                            FROM following following
 							                           WHERE (following.userid = '.$_SESSION['user_id'].')))
-  								ORDER BY id DESC
+  								ORDER BY tweets.id DESC
 						');
 
   					foreach ($followers_tweet as $key => $ft) {
@@ -248,7 +251,7 @@ OP;
 <script>
 $(document).ready(function() {
 	$('#tweetNow').bind('click', function() {		
-		mT.doAjax('ajax.php',{ m: "tweet", text: $("#tweetText").val() }, mT.tweetSuccess);
+		mT.doAjax('ajax.php',{ m: "tweet", text: $("#tweetText").val() }, $(this), mT.tweetSuccess);
 	});
 });
 </script>
